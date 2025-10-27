@@ -1,0 +1,31 @@
+// DCAR Coin Price Monitoring Script
+import System.Net.Http;
+import System.Threading.Tasks;
+
+class DCARPriceMonitor
+{
+    private static readonly HttpClient client = new HttpClient();
+    private const string apiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=dcar&vs_currencies=usd";
+
+    public static async Task<decimal> GetDCARPriceAsync()
+    {
+        var response = await client.GetStringAsync(apiUrl);
+        dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(response);
+        return json.dcar.usd;
+    }
+
+    public static async Task MonitorPriceAsync()
+    {
+        while (true)
+        {
+            decimal price = await GetDCARPriceAsync();
+            Console.WriteLine($"Current DCAR Price: ${price}");
+            await Task.Delay(60000); // Wait for 1 minute before checking again
+        }
+    }
+
+    public static void Main(string[] args)
+    {
+        MonitorPriceAsync().GetAwaiter().GetResult();
+    }
+}
