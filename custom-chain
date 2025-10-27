@@ -1,0 +1,22 @@
+import hashlib
+import random
+import time
+
+def generate_validator_id(static_seed, coherence_value, transmission_value):
+    data = f"{static_seed}-{coherence_value}-{transmission_value}"
+    validator_id = hashlib.sha256(data.encode()).hexdigest()
+    return validator_id
+
+# Example usage:
+
+# Static signal: a fixed seed or unique identifier per validator
+static_seed = "Validator_Static_Seed_12345"
+
+# Coherence signal: e.g., a recent heartbeat or state value
+coherence_value = "Network_Heartbeat_67890"
+
+# Transmission signal: e.g., current timestamp or message count
+transmission_value = str(int(time.time()))
+
+validator_id = generate_validator_id(static_seed, coherence_value, transmission_value)
+print("Validator ID:", validator_id)
