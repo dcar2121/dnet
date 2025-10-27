@@ -21,3 +21,38 @@ coherence_value = "Network_Heartbeat"
 transmission_value = str(int(time.time()))
 validator_id = generate_validator_id(static_seed, coherence_value, transmission_value)
 print("Validator ID:", validator_id)
+```
+Setup Instructions
+
+Clone this repository:
+
+CopyRun
+
+git clone https://github.com/yourusername/poa-network.git
+
+cd poa-network
+
+Install dependencies (if any). For example, if using Python:
+
+CopyRun
+
+pip install -r requirements.txt
+
+(Note: Create requirements.txt with needed dependencies if applicable.)
+
+Configure validator parameters:
+
+Set static seed for each validator.
+
+Implement logic to update coherence and transmission signals periodically.
+
+Usage
+
+Initialize validators with their static seed.
+
+Generate validator IDs dynamically during each consensus round.
+
+Sign blocks only if the validator's ID meets required criteria.
+
+Broadcast signed blocks; others verify signatures.
+Broadcast signed blocks; others verify signatures.
