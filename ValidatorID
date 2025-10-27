@@ -1,0 +1,43 @@
+# Proof of Concept Algorithm for D Network 
+
+# This project implements a Proof-of-Authority (PoA) consensus mechanism suitable for a decentralized network (D network). It features a deterministic validator ID generation based on static, coherence, and transmission signals, enhancing security and dynamic validator identity management.
+
+---
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Validator ID Generation](#validator-id-generation)
+- [Setup Instructions](#setup-instructions)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Overview
+
+PoA is a consensus protocol where a set of trusted validators produce and validate blocks. This implementation:
+- Uses cryptographic signatures from validators.
+- Generates validator IDs dynamically based on specific signals.
+- Supports validator set management via governance.
+
+---
+
+## Features
+
+- **Deterministic Validator IDs**: Generated from static, coherence, and transmission signals.
+- **Secure Block Signing**: Validators sign blocks with their private keys.
+- **Validator Management**: Easy addition/removal of validators through governance.
+- **Lightweight & Fast**: Suitable for permissioned or semi-permissioned networks.
+
+---
+
+## Validator ID Generation
+
+Each validator's ID is generated as follows:
+- **Validator1**: 0ff65141985399d7bba13a11b84285a99c102edcf34153bc2b64eddb8d219d41,
+- **Validator2**: 12c1f51cf0196e9b8ee403ab1a595184d712bbdeff3007b7411d23fb46669bb7,
+- **Validator3**: 02e5cf5fd99db86009ce2877e130891e20a64daeca0beba97c31f41a818943c6,
+- **Validator4**: 12c1f51cf0196e9b8ee403ab1a595184d712bbdeff3007b7411d23fb46669bb7,
+- **Validator5**: 0ff65141985399d7bba13a11b84285a99c102edcf34153bc2b64eddb8d219d41,
